@@ -8,7 +8,7 @@ neotree.setup({
     highlight = "NeoTreeFileName",
   },
   window = {
-    width = 50,
+    width = 40,
     mappings = {
       ["l"] = "open",
       ["h"] = "close_node",

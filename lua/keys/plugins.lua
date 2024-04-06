@@ -30,7 +30,15 @@ nm('gr', '<cmd>Trouble lsp_references<CR>')     -- Референсы в LSP
 -- Formatter
 nm('<leader>l', '<cmd>Format<CR>')
 
+im('C-g', '<cmd>codeium#Accept()<CR>')
+im('C-e', '<cmd>call codeium#CycleCompletions(1)<CR>')
+im('C-q', '<cmd>call codeium#CycleCompletions(-1)<CR>')
+im('C-x', '<cmd>call codeium#Clear()<CR>')
+nm('Oc', '<cmd>call codeium#Chat()<CR>')
 
 
-
+-- Go run coommand
 nm('gor', '<cmd>GoRun<CR>')
+
+-- turn to insert mode at the end of file
+nm('<C-y>', 'G$o')

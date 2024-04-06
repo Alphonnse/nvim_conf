@@ -20,7 +20,8 @@ opt.completeopt = 'menuone,noselect'
 -- Not auto comment new lines after the transitoin
 vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
 
-opt.guifont= 'Hack:h9'              -- Изменить размер шрифта
+-- opt.guifont= ':h4'              -- Изменить размер шрифта
+opt.guifont= 'FiraCode Nerd Font:h9'              -- Изменить размер шрифта
 opt.colorcolumn = '80'              -- Разделитель на 80 символов
 opt.cursorline = true               -- Подсветка строки с курсором
 opt.spelllang= { 'en_us', 'ru' }    -- Словари рус eng
@@ -32,7 +33,6 @@ opt.termguicolors = true            --  24-bit RGB colors
 
 g.translate_source = 'ru'
 g.translate_target = 'en'
-
 
 -- Запоминает где nvim последний раз редактировал файл
 vim.cmd [[autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

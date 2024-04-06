@@ -4,9 +4,8 @@ vim.cmd [[packadd packer.nvim]]
 
 -- Using these collnack like a list of plugins
 return require('packer').startup(function()
-
-	use {'ray-x/go.nvim',
-		config = function ()
+	use { 'ray-x/go.nvim',
+		config = function()
 			require('go').setup {}
 		end
 	}
@@ -14,7 +13,7 @@ return require('packer').startup(function()
 	-- indentline
 	use {
 		'lukas-reineke/indent-blankline.nvim',
-		config = function ()
+		config = function()
 			-- require("ibl").setup {}
 			require('plugins/indentline')
 		end
@@ -23,8 +22,8 @@ return require('packer').startup(function()
 	-- Nivim surround
 	use {
 		"kylechui/nvim-surround",
-		tag="*",
-		config = function ()
+		tag = "*",
+		config = function()
 			require("nvim-surround").setup {}
 		end
 	}
@@ -36,7 +35,7 @@ return require('packer').startup(function()
 	use 'neovim/nvim-lspconfig'
 
 	-- for ru-eng keyboard commands
-    use 'powerman/vim-plugin-ruscmd'
+	use 'powerman/vim-plugin-ruscmd'
 
 	-- icons for autocomplete
 	use {
@@ -52,7 +51,7 @@ return require('packer').startup(function()
 		requires = {
 			'williamboman/mason-lspconfig.nvim',
 			'neovim/nvim-lspconfig',
-			-- либо после того, что внизу либо в mason.lua 
+			-- либо после того, что внизу либо в mason.lua
 			'jose-elias-alvarez/null-ls.nvim',
 			'jay-babu/mason-null-ls.nvim',
 		},
@@ -104,26 +103,26 @@ return require('packer').startup(function()
 			'nvim-lua/plenary.nvim',
 			'MunifTanjim/nui.nvim',
 		},
-		config = function ()
+		config = function()
 			require('plugins/neotree')
 		end
 	}
 
 	-- commetntor
 	use {
-    	'numToStr/Comment.nvim',
-    	config = function()
-        	require('plugins/comment')
-    	end
+		'numToStr/Comment.nvim',
+		config = function()
+			require('plugins/comment')
+		end
 	}
 
 	-- Sytex highlighting
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
 		config = function()
 			require('plugins/treesitter')
 		end
@@ -136,7 +135,7 @@ return require('packer').startup(function()
 			'nvim-lua/plenary.nvim',
 			'ahmedkhalf/project.nvim',
 		},
-		config = function ()
+		config = function()
 			require("telescope").setup {}
 		end
 	}
@@ -145,7 +144,7 @@ return require('packer').startup(function()
 	use {
 		'akinsho/bufferline.nvim',
 		requires = "nvim-tree/nvim-web-devicons",
-		config = function ()
+		config = function()
 			require("bufferline").setup {}
 		end
 	}
@@ -153,10 +152,31 @@ return require('packer').startup(function()
 	--autopairs
 	use {
 		"windwp/nvim-autopairs",
-    	config = function () 
-			require("nvim-autopairs").setup {} 
+		config = function()
+			require("nvim-autopairs").setup {}
 		end
 	}
+	--vimtex
+	use {
+		'lervag/vimtex',
+		opt = true,
+		config = function()
+			vim.g.vimtex_view_method = 'zathura'
+			vim.g.vimtex_view_general_viewer = 'evince'
+			vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@texd]]
+			vim.g.vimtex_compiler_method = 'latexrun'
+			--     vim.g.vimtex_view_general_viewer = 'evince'
+			vim.g.vimtex_compiler_latexmk_engines = {
+				_ = '-xelatex'
+			}
+			--     vim.g.tex_comment_nospell = 1
+			--     vim.g.vimtex_compiler_progname = 'nvr'
+			--     vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
+			--     vim.g.vimtex_view_general_options_latexmk = '--unique'
+		end,
+		ft = 'tex'
+	}
+	-- use 'lervag/vimtex'
 
 	-- theme
 	-- use {
@@ -171,11 +191,17 @@ return require('packer').startup(function()
 	-- Using Packer
 	use {
 		'navarasu/onedark.nvim',
-		config = function ()
+		config = function()
 			require('onedark').setup {
 				style = "darker"
 			}
 			require('onedark').load()
+		end
+	}
+
+	use {
+		'Exafunction/codeium.vim',
+		config = function()
 		end
 	}
 end)

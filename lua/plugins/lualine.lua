@@ -176,6 +176,14 @@ ins_left {
   color = { fg = '#ffffff', gui = 'bold' },
 }
 
+ins_left {
+  function()
+  	return "  " .. vim.api.nvim_call_function("codeium#GetStatusString", {})
+  end,
+  color = { fg = colors.green, gui = 'bold' },
+}
+
+
 -- Add components to right sections
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
@@ -183,6 +191,7 @@ ins_right {
   cond = conditions.hide_in_width,
   color = { fg = colors.green, gui = 'bold' },
 }
+
 
 ins_right {
   'fileformat',
