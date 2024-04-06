@@ -36,7 +36,6 @@ im('C-q', '<cmd>call codeium#CycleCompletions(-1)<CR>')
 im('C-x', '<cmd>call codeium#Clear()<CR>')
 nm('Oc', '<cmd>call codeium#Chat()<CR>')
 
-
 -- Go run coommand
 nm('gor', '<cmd>GoRun<CR>')
 
