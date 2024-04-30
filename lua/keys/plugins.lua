@@ -41,3 +41,17 @@ nm('gor', '<cmd>GoRun<CR>')
 
 -- turn to insert mode at the end of file
 nm('<C-y>', 'G$o')
+
+-- moving cursor to multiple lines
+nm('<C-k>', ':-3<CR>')
+nm('<C-j>', ':+3<CR>')
+nm('<C-e>', ':-10<CR>')
+nm('<C-b>', ':+10<CR>')
+
+-- line/multiple lines up and down
+nm('<A-j>', ':m .+1<CR>==')
+nm('<A-k>', ':m .-2<CR>==')
+im('<A-j>', '<Esc>:m .+1<CR>==gi')
+im('<A-k>', '<Esc>:m .-2<CR>==gi')
+vm('<A-j>', ':m \'>+1<CR>gv=gv')
+vm('<A-k>', ':m \'<-2<CR>gv=gv')
