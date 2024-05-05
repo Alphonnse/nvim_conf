@@ -45,8 +45,16 @@ nm('<C-y>', 'G$o')
 -- moving cursor to multiple lines
 nm('<C-k>', ':-3<CR>')
 nm('<C-j>', ':+3<CR>')
+vm('<C-k>', ':-3<CR>')
+vm('<C-j>', ':+3<CR>')
+im('<C-k>', ':-3<CR>')
+im('<C-j>', ':+3<CR>')
 nm('<C-e>', ':-10<CR>')
 nm('<C-b>', ':+10<CR>')
+vm('<C-e>', ':-10<CR>')
+vm('<C-b>', ':+10<CR>')
+im('<C-e>', ':-10<CR>')
+im('<C-b>', ':+10<CR>')
 
 -- line/multiple lines up and down
 nm('<A-j>', ':m .+1<CR>==')
